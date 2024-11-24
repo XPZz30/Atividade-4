@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Produtos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container bg-secondary text-white">
+  <h1 class="mt-5">Cadastro de Produtos</h1>
+  <p>Bem-vindo, <%= usuario %>. Último acesso: <%= ultimoAcesso %></p>
+  <form method="POST" action="/cadastro">
+    <div class="mb-3">
+      <label for="codigo" class="form-label">Código de Barras</label>
+      <input type="text" class="form-control" id="codigo" name="codigo" required>
+    </div>
+    <div class="mb-3">
+      <label for="descricao" class="form-label">Descrição</label>
+      <input type="text" class="form-control" id="descricao" name="descricao" required>
+    </div>
+    <div class="mb-3">
+      <label for="precoCusto" class="form-label">Preço de Custo</label>
+      <input type="number" step="0.01" class="form-control" id="precoCusto" name="precoCusto" required>
+    </div>
+    <div class="mb-3">
+      <label for="precoVenda" class="form-label">Preço de Venda</label>
+      <input type="number" step="0.01" class="form-control" id="precoVenda" name="precoVenda" required>
+    </div>
+    <div class="mb-3">
+      <label for="validade" class="form-label">Data de Validade</label>
+      <input type="date" class="form-control" id="validade" name="validade" required>
+    </div>
+    <div class="mb-3">
+      <label for="qtdEstoque" class="form-label">Quantidade em Estoque</label>
+      <input type="number" class="form-control" id="qtdEstoque" name="qtdEstoque" required>
+    </div>
+    <div class="mb-3">
+      <label for="fabricante" class="form-label">Fabricante</label>
+      <input type="text" class="form-control" id="fabricante" name="fabricante" required>
+    </div>
+    <button type="submit" class="btn btn-dark">Cadastrar Produto</button>
+  </form>
+</body>
+</html>
