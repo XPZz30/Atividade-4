@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -10,17 +10,17 @@ const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
     res.redirect("/login");
-  });
-  
+});
+
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(
-    session({
-        secret: "segredo",
-        resave: false,
-        saveUninitialized: true,
-    })
+app.use(express.urlencoded({ extended: true }));
+app.use(session({
+    secret: "segredo",
+    resave: false,
+    saveUninitialized: true,
+})
 );
 
 let produtos = [];
